@@ -22,18 +22,20 @@ class UntitledTestCase(unittest.TestCase):
     
     def test_untitled_test_case(self):
         driver = self.driver
-        driver.get("https://www.maavaishnodevi.org/OnlineServices/LogIn.aspx")
-        driver.find_element_by_id("agree").click()
-        driver.find_element_by_id("Btn_Submit").click()
-        driver.find_element_by_link_text("×").click()
-        driver.find_element_by_id("txtuser").send_keys("SamirRaxit")
-        driver.find_element_by_id("txtpassword").send_keys("HambaGoru123")
-        driver.find_element_by_id("Btn_Submit").click()
-        driver.find_element_by_id("Image4").click()
-        driver.find_element_by_id("DrpResvDate").click()
-        Select(driver.find_element_by_id("DrpResvDate")).select_by_visible_text("28-Feb-2020")
-        driver.find_element_by_id("BtnAccept").click()
-        driver.find_element_by_link_text("Logout").click()
+        try:
+            driver.get("https://www.maavaishnodevi.org/OnlineServices/LogIn.aspx")
+            driver.find_element_by_id("agree").click()
+            driver.find_element_by_id("Btn_Submit").click()
+            driver.find_element_by_link_text("×").click()
+            driver.find_element_by_id("txtuser").send_keys("SamirRaxit")
+            driver.find_element_by_id("txtpassword").send_keys("HambaGoru123")
+            driver.find_element_by_id("Btn_Submit").click()
+            driver.find_element_by_id("Image4").click()
+            driver.find_element_by_id("DrpResvDate").click()
+            Select(driver.find_element_by_id("DrpResvDate")).select_by_visible_text("28-Feb-2020")
+            driver.find_element_by_id("BtnAccept").click()
+        finally:
+            driver.find_element_by_link_text("Logout").click()
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
