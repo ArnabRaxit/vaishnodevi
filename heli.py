@@ -32,8 +32,8 @@ class UntitledTestCase(unittest.TestCase):
             driver.find_element_by_id("Btn_Submit").click()
             driver.find_element_by_id("Image4").click()
             driver.find_element_by_id("DrpResvDate").click()
-            Select(driver.find_element_by_id("DrpResvDate")).select_by_visible_text("28-Feb-2020")
-            driver.find_element_by_id("BtnAccept").click()
+            Select(driver.find_element_by_id("DrpResvDate")).select_by_visible_text("27-Feb-2020")
+            # driver.find_element_by_id("BtnAccept").click()
         finally:
             driver.find_element_by_link_text("Logout").click()
     
