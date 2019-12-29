@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: joyzoursky/python-chromedriver:2.7-xvfb-selenium
+      - image: joyzoursky/python-chromedriver:2.7-selenium
     steps:
       - checkout
       - run:
